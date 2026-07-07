@@ -9,6 +9,20 @@ The FAM_CS material is a two-dimensional plane-stress nDMaterial for reinforced 
 
 The model keeps crack directions fixed after cracking and represents the reinforced concrete panel response using horizontal and vertical rebar materials together with concrete struts. Nonlinear shear aggregate interlock along concrete cracks [Maekawa2003FAMCS]_ and rebar dowel action are included to represent shear transfer mechanisms along crack surfaces. When two crack systems are active, the model activates the crack with lower shear stiffness for the aggregate interlock and dowel action calculation.
 
+The panel-level mechanisms represented by FAM_CS are illustrated below. The material response combines the in-plane panel stress and strain field, uniaxial rebar response, dowel action after cracking, and concrete behavior before and after crack formation.
+
+.. figure:: FAM_CS_panel_mechanisms.png
+   :align: center
+   :width: 85%
+   :figclass: align-center
+
+The shear transfer mechanism along crack surfaces includes nonlinear aggregate interlock, as shown below.
+
+.. figure:: FAM_CS_aggregate_interlock.png
+   :align: center
+   :width: 55%
+   :figclass: align-center
+
 .. admonition:: Command
 
    nDMaterial FAM_CS $matTag $rho $sX $sY $conc $rouX $rouY $dY $Gamax $lm0 $sh
@@ -53,6 +67,17 @@ The following recorders are available with the FAM_CS material.
    strain_stress_interlock2, "strain and stress from crack sliding mechanism 2"
    cracking_angles, "cracking angles for the crack systems"
 
+.. admonition:: Verification
+
+   The FAM_CS model was first validated using six reinforced concrete wall tests under coupled axial tension and cyclic lateral loads. The comparisons below show the experimentally measured and simulated load-deformation responses for the six specimens modeled with ``nDMaterial FAM_CS`` and ``quad`` elements.
+
+   .. figure:: FAM_CS_validation_six_walls.png
+      :align: center
+      :width: 95%
+      :figclass: align-center
+
+   Additional validation examples include 75 reinforced concrete wall tests under compression-flexure-shear and flexure-shear loading conditions.
+
 .. admonition:: Examples
 
    The following commands define one concrete material, two reinforcing steel materials, and one FAM_CS material.
@@ -81,10 +106,6 @@ The following recorders are available with the FAM_CS material.
    .. literalinclude:: FAM_CSExample/SW1Model.tcl
       :language: tcl
       :lines: 98-108
-
-.. note::
-
-   The FAM_CS model was first validated using six reinforced concrete wall tests under coupled axial tension and cyclic lateral loads. Additional validation examples include 75 reinforced concrete wall tests under compression-flexure-shear and flexure-shear loading conditions.
 
 **References**
 
