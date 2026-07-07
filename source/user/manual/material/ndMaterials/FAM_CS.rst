@@ -5,7 +5,7 @@ FAM_CS Material
 
 Code Developed by: **Shaohui Zhang**, **Xiaodong Ji**, and **Yue Yu** at Tsinghua University.
 
-The FAM_CS material is a two-dimensional plane-stress nDMaterial for reinforced concrete panels and walls. FAM_CS stands for Fixed Angle Model Considering Crack Sliding. The material is intended for nonlinear simulation of reinforced concrete shear walls under tension/compression-flexure-shear and flexure-shear loading, including walls subjected to coupled axial tension and cyclic lateral loads [Zhang2024FAMCS]_.
+The FAM_CS material is a two-dimensional plane-stress nDMaterial for reinforced concrete panels and walls. FAM_CS stands for Fixed Angle Model Considering Crack Sliding. The material is intended for nonlinear simulation of reinforced concrete shear walls under tension/compression-flexure-shear and flexure-shear loading [Zhang2024FAMCS]_.
 
 The model keeps crack directions fixed after cracking and represents the reinforced concrete panel response using horizontal and vertical rebar materials together with concrete struts. Nonlinear shear aggregate interlock along concrete cracks [Maekawa2003FAMCS]_ and rebar dowel action are included to represent shear transfer mechanisms along crack surfaces. When two crack systems are active, the model activates the crack with lower shear stiffness for the aggregate interlock and dowel action calculation.
 
@@ -41,8 +41,6 @@ The panel-level mechanisms represented by FAM_CS are illustrated below. The mate
 .. note::
 
    The concrete uniaxial material used for ``$conc`` must be ``ConcreteCM``. The FAM_CS implementation uses response quantities supplied by ``ConcreteCM``; other concrete uniaxial materials do not provide the required internal responses.
-
-   The model is intended for plane-stress reinforced concrete wall and panel simulations, for example with 2D continuum elements.
 
 The following recorders are available with the FAM_CS material.
 
