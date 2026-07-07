@@ -82,6 +82,8 @@ The following recorders are available with the FAM_CS material.
 
 .. admonition:: Examples
 
+   Download the SW1 Tcl example: :download:`FAM_CS_SW1Example.zip <FAM_CS_SW1Example.zip>`. The archive contains the Tcl input files and experimental hysteretic curve data; recorder output files are generated when the model is run.
+
    The following commands define one concrete material, two reinforcing steel materials, and one FAM_CS material.
 
    .. code-block:: tcl
