@@ -100,6 +100,6 @@ The following recorders are available with the FAM_CS material.
 
 .. [Ji2018FAMCS] Ji, X., Cheng, X., and Xu, M. (2018). "Coupled axial tension-shear behavior of reinforced concrete walls." Engineering Structures, 167, 132-142. https://doi.org/10.1016/j.engstruct.2018.04.015.
 
-.. [Ji2024FAMCS] Ji, X., Sun, L., Wang, S., and Kolozvari, K. (2024). "Seismic behavior and modeling of T-shaped reinforced concrete walls under high axial force ratios." Earthquake Engineering & Structural Dynamics, 53(3), 1085-1106.
+.. [Ji2024FAMCS] Ji, X., Sun, L., Wang, S., and Kolozvari, K. (2024). "Seismic behavior and modeling of T-shaped reinforced concrete walls under high axial force ratios." Earthquake Engineering & Structural Dynamics, 53(3), 1085-1106. https://doi.org/10.1002/eqe.4060.
 
 .. [Maekawa2003FAMCS] Maekawa, K., Pimanmas, A., and Okamura, H. (2003). Non-linear mechanics of reinforced concrete. Spon Press.
