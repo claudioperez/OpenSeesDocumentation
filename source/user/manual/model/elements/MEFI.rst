@@ -13,11 +13,7 @@ classical finite element formulation of membrane elements to resemble strips (fi
 	:width: 1000px
 	:name: MEFI_FIG
 	
-	MEFI Element: (a) Element idealization; (b) Interpolation function at bottom and top edges; (c) Interpolation function at left and right edges.
-	
-The three-dimensional Membrane Fiber element (MEFI_3D) is a four-node element with six degrees of freedom (DOFs) per node: three translational DOFs and three rotational DOFs.
-The in-plane response is based on the MEFI_2D formulation, whereas the out-of-plane response follows the Kirchhoff plate formulation with four integration points per element. 
-Both behaviors are formulated independently, providing an uncoupled representation of membrane and bending actions in reinforced concrete walls.
+	MEFI_2D Element: (a) Element idealization; (b) Interpolation function at bottom and top edges; (c) Interpolation function at left and right edges.
 
 This command is used to construct a MEFI element object for two-dimensional problems (``-ndm 2 -ndf 3``).
   
@@ -25,13 +21,13 @@ This command is used to construct a MEFI element object for two-dimensional prob
 
   .. tab:: Tcl
 
-     .. function:: element MEFI $eleTag $iNode $jNode $kNode $lNode $numFib <-width $widths> <-sec $secTags>
+     .. function:: element MEFI $eleTag $iNode $jNode $kNode $lNode $numFib -width $widths -sec $secTags
 
      .. csv-table::
 		:header: "Argument", "Type", "Description"
 		:widths: 25, 10, 40
 
-		 "$eleTag",     							"*integer*", 	"unique element object tag"
+		 "$eleTag",     						"*integer*", 	"unique element object tag"
 		 "$iNode $jNode $kNode $lNode", 		"*integer*", 	"element node tags defined in counterclockwise direction"
 		 "$numFib",								"*integer*", 	"number of element macro-fibers"
 		 "$widths",								"*list float*", "a list of *numFib* macro-fiber widths"
@@ -52,19 +48,32 @@ This command is used to construct a MEFI element object for two-dimensional prob
       "``secTags``",    "*list(int)*",    "a list of *numFib* macro-fiber section tags"
 
 
+The three-dimensional Membrane Fiber element (MEFI_3D) is a four-node element with six degrees of freedom (DOFs) per node: three translational DOFs and three rotational DOFs.
+The in-plane response is based on the MEFI_2D formulation, whereas the out-of-plane response is based on Kirchhoff plate theory with four integration points per element. 
+Both behaviors are formulated independently, providing an uncoupled representation of membrane and bending actions in reinforced concrete walls.
+
+.. figure:: figures/MEFI/MEFI3D_Element.JPG
+	:align: center
+	:figclass: align-center
+	:width: 1000px
+	:name: MEFI3D_FIG
+	
+	MEFI_3D Element: (a) Element idealization; (b) In-plane behavior based on the MEFI_2D formulation; (c) Out-of-plane behavior based on Kirchhoff plate theory.
+
+
 This command is used to construct a MEFI element object for three-dimensional problems (``-ndm 3 -ndf 6``).
   
 .. tabs::
 
   .. tab:: Tcl
 
-     .. function:: element MEFI $eleTag $iNode $jNode $kNode $lNode $numFib <-width $widths> <-sec $secTags> <-thickMod $thickMod> <-poisson $poisson>
+     .. function:: element MEFI $eleTag $iNode $jNode $kNode $lNode $numFib -width $widths -sec $secTags <-thickMod $thickMod> <-poisson $poisson>
 
      .. csv-table::
 		:header: "Argument", "Type", "Description"
 		:widths: 25, 10, 40
 
-		 "$eleTag",     							"*integer*", 	"unique element object tag"
+		 "$eleTag",     						"*integer*", 	"unique element object tag"
 		 "$iNode $jNode $kNode $lNode", 		"*integer*", 	"element node tags defined in counterclockwise direction"
 		 "$numFib",								"*integer*", 	"number of element macro-fibers"
 		 "$widths",								"*list float*", "a list of *numFib* macro-fiber widths"
